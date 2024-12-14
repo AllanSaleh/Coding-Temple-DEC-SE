@@ -55,3 +55,5 @@ while user_input != 2:
             duel_opponent(opponent_name)
     elif user_input == 2:
         print("Goodbye! Good luck!")
+    else:
+        print("Wrong Choice. Try again.")
