@@ -47,23 +47,28 @@ issubset(): "Do my skills meet the job requirements?"
 issuperset(): "Does my toolbox contain all the tools needed for the task?"
 """
 
+# Add a duplicate list of employees and remove duplicates using a set
 employee_list = ["Alice","Bob","Eve","Frank", "Alice", "Bob"]
 unique_employees = set(employee_list)
 print(f"Unique employees after removing the duplicates: {unique_employees}")
 
-#Intersection: Members who are both in the team and admins
+# Intersection: Members who are both in the team and admins
 admins_and_team_members = team.intersection(admins)
 print(f"members who are both team and admin members: {admins_and_team_members}")
 
+# Union: Combines all items from two sets into one leaving out the duplicates
 all_people = team.union(admins)
 print(f"all members: {all_people}")
 
+# Difference: Admins who are not in the team
 admins_not_in_team = admins.difference(team)
 print(f"Admins not in the team: {admins_not_in_team}")
 
+# Difference: Team members who are not admins
 team_not_an_team = team.difference(admins)
 print(f"Team that are not an admin: {team_not_an_team}")
 
+# Symmetric Difference: Characters who are either in the team or admins, but not both
 unique_to_each_group = team.symmetric_difference(admins)
 print(f"People unique to either the team or admins: {unique_to_each_group}")
 
@@ -71,10 +76,12 @@ print(f"People unique to either the team or admins: {unique_to_each_group}")
 for member in team:
     print(member)
 
+# Remove a member from the team
 team.discard("Eve")
 team.discard('Bob')
 print(team)
 
+# Frozen set example: Immutable set
 tools = frozenset({"Hammer", "Wrench", "Screwdriver"})
 print(f"Tools: {tools}")
-# tools.add("Drill")
+# tools.add("Drill") # causes error
